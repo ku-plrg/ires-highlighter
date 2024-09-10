@@ -1,0 +1,125 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ires",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functionCalls"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.ires",
+					"begin": "//",
+					"end": "$"
+				},
+				{
+					"name": "comment.block.ires",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"patterns": [
+						{
+							"name": "punctuation.definition.comment.ires",
+							"match": "\\*/|/\\*"
+						}
+					]
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ires",
+					"match": "\\b(if|else|while|return)\\b"
+				},
+				{
+					"name": "keyword.other.ires",
+					"match": "\\b(let|def|call|sdo-call|assert|push)\\b"
+				},
+				{
+					"name": "entity.name.syntax.ires",
+					"match": "<SYNTAX>"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ires",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ires",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.boolean.ires",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.null.ires",
+					"match": "\\b(null)\\b"
+				},
+				{
+					"name": "constant.number.ires",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.temp.ires",
+					"match": "%[0-9]+"
+				}
+			]
+		},
+		"functionCalls": {
+			"patterns": [
+				{
+					"name": "support.function.builtin.ires.clo",
+					"match": "clo(?=<)"
+				},
+				{
+					"name": "punctuation.definition.angle.ires",
+					"match": "<|>"
+				},
+				{
+					"name": "support.function.builtin.ires.method",
+					"match": "\"[^\"]+\""
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.ires",
+					"match": "(->|\\|\\||&&|==|=|!)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ir"
+}

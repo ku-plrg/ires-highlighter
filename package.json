@@ -1,0 +1,25 @@
+{
+  "name": "ires-highlighter",
+  "displayName": "IRES Highlighter",
+  "description": "Highlighter for ESMeta IR language IRES",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ires",
+      "aliases": ["ires", "ires"],
+      "extensions": [".ir"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ires",
+      "scopeName": "source.ir",
+      "path": "./syntaxes/ires.tmLanguage.json"
+    }]
+  }
+}
