@@ -1,7 +1,8 @@
 {
-  "name": "ires-highlighter",
-  "displayName": "IRES Highlighter",
-  "description": "Highlighter for ESMeta IR language IRES",
+  "name": "ires-language-support",
+  "displayName": "IR-ES Language Support",
+  "repository": "https://github.com/ku-plrg/ires-highlighter",
+  "description": "Highlighter for ESMeta IR language IR-ES",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
@@ -12,7 +13,7 @@
   "contributes": {
     "languages": [{
       "id": "ires",
-      "aliases": ["ires", "ires"],
+      "aliases": ["IR-ESMeta", "ires"],
       "extensions": [".ir"],
       "configuration": "./language-configuration.json"
     }],
